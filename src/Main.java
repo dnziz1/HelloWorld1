@@ -112,7 +112,11 @@ private void ValidateUserCommands() {
 }
 
 private void ConvertNamesToUpperCase() {
-    
+    String firstName = "Daniel";
+    String middleName = "Clu"; // Not my middle name
+    String lastName = "Nkurunziza";
+
+    System.out.printf("\nThe first name %s and last name %s are uppercase. Middle name %s is not.", firstName.toUpperCase(), lastName.toUpperCase(), middleName);
 }
 
 private void CheckContentEquality() {
