@@ -79,7 +79,7 @@ void main() {
             World
             """;
     IO.println(multiline);
-
+/*
     Scanner reader = new Scanner(System.in);
     IO.print("What is your name: ");
     String yourName = reader.nextLine();
@@ -87,7 +87,11 @@ void main() {
     byte yourAge = reader.nextByte();
     yourAge++;
     System.out.printf("Your name is %s and you will be %d years old next year", yourName, yourAge);
-    
+*/
+    Short type1 = 128;
+    Short type2 = 128;
+    IO.println(type1 == type2); // Why is it true at 127 and false at 128?
+
     ExtractSubstrings();
     ValidateUserCommands();
     ConvertNamesToUpperCase();
@@ -95,6 +99,12 @@ void main() {
 }
 
 private void ExtractSubstrings() {
+    String fullName = "Daniel Nkurunziza";
+
+    // Getting the first name of full name using substring
+    IO.println("Your first name is " + fullName.substring(0,7));
+    // Removing the first name of full name using substring
+    IO.println("Your last name is " + fullName.substring(7));
 }
 
 private void ValidateUserCommands() {
