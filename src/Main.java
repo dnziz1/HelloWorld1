@@ -87,5 +87,26 @@ void main() {
     byte yourAge = reader.nextByte();
     yourAge++;
     System.out.printf("Your name is %s and you will be %d years old next year", yourName, yourAge);
+    
+    ExtractSubstrings();
+    ValidateUserCommands();
+    ConvertNamesToUpperCase();
+    CheckContentEquality();
 }
+
+private void ExtractSubstrings() {
+}
+
+private void ValidateUserCommands() {
+    
+}
+
+private void ConvertNamesToUpperCase() {
+    
+}
+
+private void CheckContentEquality() {
+}
+
+
 
