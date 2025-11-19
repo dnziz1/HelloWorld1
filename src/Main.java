@@ -116,10 +116,20 @@ private void ConvertNamesToUpperCase() {
     String middleName = "Clu"; // Not my middle name
     String lastName = "Nkurunziza";
 
-    System.out.printf("\nThe first name %s and last name %s are uppercase. Middle name %s is not.", firstName.toUpperCase(), lastName.toUpperCase(), middleName);
+    System.out.printf("\nThe first name %s and last name %s are uppercase. Middle name %s is not.\n", firstName.toUpperCase(), lastName.toUpperCase(), middleName);
 }
 
 private void CheckContentEquality() {
+    String firstName1 = "Daniel";
+    String firstName2 = "Daniel";
+    String firstName3 = "Daniel ";
+
+    IO.println(firstName1 == firstName2); // true
+    IO.println(firstName1.equals(firstName2)); // true
+    IO.println(firstName1 == firstName3); // false
+    IO.println((firstName1.substring(0,3) + firstName3.substring(3,6)) == firstName2); // false
+    IO.println((firstName1.substring(0,3) + firstName3.substring(3,6)).equals(firstName2)); // true
+    IO.println(firstName1.substring(0,3) + firstName3.substring(3,6));
 }
 
 
