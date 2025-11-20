@@ -92,6 +92,53 @@ void main() {
     Short type2 = 128;
     IO.println(type1 == type2); // Why is it true at 127 and false at 128?
 
+//    long longNum = 100;
+//    int num = (int)longNum;
+
+    /*
+    int numInt1 = 2;
+    short numShort2 = 3;
+    float result= (float)numInt1 / numShort2;
+
+    long numLong3 = 342_934_092l;
+    float pi3 = 3.999999999999999999999999999999f;
+    double result1 = numInt1 + pi3;
+    IO.println(result1);
+
+
+    double price = 1.49; // litre price for petrol
+    int capacity = 20; // in litres
+    double totalCostToFillTankFromEmpty = capacity * price;
+    IO.println(totalCostToFillTankFromEmpty);
+
+
+    char letter = 'D';
+    int giveMeTheNum = (int)letter;
+    IO.println(giveMeTheNum);
+
+    int letterValue = 97;
+    char giveMeTheCharacter = (char)letterValue;
+    IO.println(giveMeTheCharacter);
+
+    char digit = '7';
+    int value = digit - '0';
+    IO.println(value);
+
+    char newLetter = (char)(letter + 32);
+    IO.println(newLetter);
+
+
+    final float VAT_RATE = 0.20f;
+     */
+
+    int quantity = 1_000; // literals
+    int total = quantity * 5; // expression
+    IO.println(quantity);
+
+    byte b1 = 1;
+    byte b2 = b1;
+    IO.println(b2);
+
     ExtractSubstrings();
     ValidateUserCommands();
     ConvertNamesToUpperCase();
