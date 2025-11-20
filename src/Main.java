@@ -155,7 +155,14 @@ private void ExtractSubstrings() {
 }
 
 private void ValidateUserCommands() {
-    
+    Scanner reader = new Scanner(System.in);
+    IO.println("Who is the owner of this repository?");
+    String ownerValidation = reader.nextLine().trim(); // Remove spaces after and before
+
+    if (ownerValidation.equals("Daniel"))
+        IO.println("Correct!");
+    else
+        IO.println("Wrong, bye-bye :(");
 }
 
 private void ConvertNamesToUpperCase() {
@@ -176,7 +183,6 @@ private void CheckContentEquality() {
     IO.println(firstName1 == firstName3); // false
     IO.println((firstName1.substring(0,3) + firstName3.substring(3,6)) == firstName2); // false
     IO.println((firstName1.substring(0,3) + firstName3.substring(3,6)).equals(firstName2)); // true
-    IO.println(firstName1.substring(0,3) + firstName3.substring(3,6));
 }
 
 
