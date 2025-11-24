@@ -90,7 +90,7 @@ void main() {
 */
     Short type1 = 128;
     Short type2 = 128;
-    IO.println(type1 == type2); // Why is it true at 127 and false at 128?
+//    IO.println(type1 == type2); // Why is it true at 127 and false at 128?
 
 //    long longNum = 100;
 //    int num = (int)longNum;
@@ -129,7 +129,7 @@ void main() {
 
 
     final float VAT_RATE = 0.20f;
-     */
+
 
     int quantity = 1_000; // literals
     int total = quantity * 5; // expression
@@ -139,10 +139,147 @@ void main() {
     byte b2 = b1;
     IO.println(b2);
 
-    ExtractSubstrings();
-    ValidateUserCommands();
-    ConvertNamesToUpperCase();
-    CheckContentEquality();
+
+
+
+    byte age1 = 14;
+    if (age1 >= 16)
+        IO.println("Can vote!");
+    else if (age1 == 15)
+        IO.println("Can't vote, can next year!");
+    else
+        IO.println("Not eligible for voting at the moment!");
+
+
+    final short SCORE = 160;
+
+    if (SCORE >= 150) {
+        IO.println("You're a genuis!");
+    }
+
+
+
+    String user = "Admin";
+    String pwd = "Password";
+
+    String userInput = "admin";
+    String userPassword = new String("Password");
+
+    if (user.toLowerCase().equals(userInput.toLowerCase()) && (pwd.equals(userPassword))) {
+        IO.println("Both matches");
+//        if (!(pwd == userPassword)) {
+//            IO.println("Password doesn't match");
+//        }
+    }
+
+
+
+    int age1 = 18;
+    boolean isMember = false;
+
+    if (age1 >= 18) {
+        if (isMember) {
+            IO.println("Eligible for member perks");
+        } else {
+            IO.println("Not a member, but meets age restriction.");
+        }
+    } else {
+        IO.println("Too young to be a member.");
+    }
+
+     */
+
+    // AND
+    byte age1 = 19;
+    boolean isAdult = age1 >= 18;
+    boolean hasID = true;
+    boolean canEnter = isAdult && hasID;
+
+    // NAND
+    boolean p = true;
+    boolean q = false;
+    boolean result = !(p && q);
+
+    // OR
+    boolean isAdmin = true;
+    boolean isEditor = false;
+    boolean canModify = isAdmin || isEditor;
+
+    // NOR
+    p = false;
+    q = false;
+    result = !(p || q);
+
+    // BUFFER
+    p = false;
+    result = p;
+
+    // NOT
+    result = !p;
+
+    // XOR
+    p = false;
+    q = false;
+    result = p ^ q;
+
+    // XNOR
+    p = true;
+    q = false;
+    result = !(p ^ q);
+
+//    true  ^ true  = false
+//    true  ^ false = true
+//    false ^ true  = true
+//    false ^ false = false
+
+    // Boolean algebra
+
+    // Identity Law
+    // p && true => p
+    // p || false => p
+    boolean isEnabled = true;
+    boolean output1 = isEnabled && true; //true ## boolean output1 = isEnabled;
+    boolean output2 = isEnabled || false; //true ## boolean output2 = isEnabled;
+
+    // Null (Domination) Law
+    // p && false => false
+    // p || true => true
+
+    // Idempotent Law
+    // p && p = p
+    // p || p = p
+
+    // Complement Law
+    // p && !p = false
+    // p || !p = true
+
+    // Double Negation Law
+    // !!p = p
+
+    // Commutative Law
+    // p && q = q && p
+    // p || q = q && p
+
+    // Associative Law
+    // p && (q && r) = (p && q) && r
+    // p || (q || r) = (p || q) || r
+
+    // Distributive Law
+    // p && (q || r) = (p && q) || (p && r)
+    // p || (q && r) = (p || q) && (p || r)
+
+    // Absorption Law
+    // p || (p && q) = p
+    // p && (p || q) = p
+
+    // De Morgan's Law
+    // !(p && q) = !p || !q
+    // !(p || q) = !p && !q
+
+//    ExtractSubstrings();
+//    ValidateUserCommands();
+//    ConvertNamesToUpperCase();
+//    CheckContentEquality();
 }
 
 private void ExtractSubstrings() {
