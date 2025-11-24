@@ -244,37 +244,66 @@ void main() {
     // Null (Domination) Law
     // p && false => false
     // p || true => true
+    boolean isEmpty = false;
+    boolean output3 = isEmpty && false; //false
+    boolean output4 = isEmpty || true; //true
 
     // Idempotent Law
     // p && p = p
     // p || p = p
+    boolean isSame = true;
+    boolean output5 = isSame && isSame; //true => same as isSame
+    boolean output6 = isSame || isSame; //true
 
     // Complement Law
     // p && !p = false
     // p || !p = true
+    boolean output7 = isSame && !isSame; //false
+    boolean output8 = isSame || !isSame; //true
 
     // Double Negation Law
     // !!p = p
+    boolean output9 = !!isSame;
 
     // Commutative Law
     // p && q = q && p
     // p || q = q && p
+    boolean isGreen = true;
+    boolean isBlue = false;
+    boolean output10 = isGreen && isBlue; //false
+    boolean output11 = isBlue && isGreen; //false
+    boolean output12 = isBlue || isGreen; //true
+    boolean output13 = isGreen || isBlue; //true
 
     // Associative Law
     // p && (q && r) = (p && q) && r
     // p || (q || r) = (p || q) || r
+    boolean isRed = true;
+    boolean output14 = isGreen && (isBlue && isRed);
+    boolean output15 = (isGreen && isBlue) && isRed;
+    boolean output16 = isGreen || (isBlue || isRed);
+    boolean output17 = (isGreen || isBlue) || isRed;
 
     // Distributive Law
     // p && (q || r) = (p && q) || (p && r)
     // p || (q && r) = (p || q) && (p || r)
+    boolean output18 = isGreen && (isBlue || isRed); //true
+    boolean output19 = (isGreen && isBlue) || (isGreen && isRed); //true
+    boolean output20 = isGreen || (isBlue && isRed); //true
+    boolean output21 = (isGreen || isBlue) && (isGreen || isRed); //true
 
     // Absorption Law
     // p || (p && q) = p
     // p && (p || q) = p
+    boolean output22 = isGreen || (isGreen && isBlue); //true
+    boolean output23 = isGreen && (isGreen || isBlue); //true
 
     // De Morgan's Law
     // !(p && q) = !p || !q
     // !(p || q) = !p && !q
+    boolean output24 = !(isGreen && isBlue); //true
+    boolean output25 = !isGreen || !isBlue; //true
+
 
 //    ExtractSubstrings();
 //    ValidateUserCommands();
