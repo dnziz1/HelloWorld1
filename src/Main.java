@@ -38,8 +38,8 @@ void main() {
 
     byte b = 120;
     short s = b;
-    int i = s;
-    long l = i;
+    int il = s;
+    long l = il;
 
     long ls = 64_000; //
     short iq = (short)ls;
@@ -187,7 +187,7 @@ void main() {
         IO.println("Too young to be a member.");
     }
 
-     */
+
 
     // AND
     byte age1 = 19;
@@ -304,6 +304,152 @@ void main() {
     boolean output24 = !(isGreen && isBlue); //true
     boolean output25 = !isGreen || !isBlue; //true
 
+    String weekday = "Tuesday";
+    weekday = weekday.toUpperCase();
+
+    switch(weekday) {
+        case "MONDAY":
+            IO.println("Start of the week.");
+            break;
+        case "FRIDAY":
+            IO.println("End of the week.");
+            break;
+        default:
+            IO.println("Mid week");
+    }
+
+    String level = "1";
+
+    switch (level) {
+        case "1": IO.println("Level 1"); break;
+        case "2": IO.println("Level 2"); break;
+
+        default: IO.println("Not a level");
+    }
+
+    String role = "ADMIN";
+    switch (role) {
+        case "ADMIN": IO.println("I am da boss!");
+        case "SUPERUSER": IO.println("I am da Database boss!");
+        break;
+        default: IO.println("Not a boss!");
+    }
+
+    String cmd = "stop";
+
+    if (cmd)
+
+    // Menu : 1. Dogs, 2. Cats, 3. Gerbils, 4. Goldfish ...
+    String option = "1";
+
+    switch (option) {
+        case "1" -> IO.println("Dogs"); // Using the -> automatically has a break implied in the case, do not use this format unless on each case there is an automatic break
+        case "2" -> IO.println("Cats");
+        case "3" -> IO.println("Gerbils");
+        case "4" -> IO.println("Goldfish");
+        default -> IO.println("What the hell is that");
+    }
+
+    int score = 0;
+    switch (score) {
+        case 0,1,2,3,4 -> IO.println("Very low."); //Using the comma will get around the block being the same
+        case 5,6,7,8,9 -> IO.println("Average");
+        case 10 -> IO.println("High");
+        default -> IO.println("Out of scope");
+    }
+    // for odd numbers
+    for (int i = 1; i < 10; i+=2) {
+        IO.println(i);
+    }
+
+
+    byte count = 0;
+    boolean useLoop = true;
+    while (useLoop) {
+        IO.println("Currently using the loop");
+        count++;
+        if (count < 10)
+            useLoop = true;
+        else
+            useLoop = false;
+    }
+
+    // do while
+    Scanner reader = new Scanner(System.in);
+    String choice;
+    do {
+        IO.println("""
+            Menu
+            Option 1:
+            Option 2:
+            ...
+            """);
+        IO.println("Enter your name: ");
+        choice = reader.nextLine();
+        // validate your reader.
+    }
+    while (choice.isBlank());
+
+
+    for (int i = 0; i < 30; i++) {
+        if (i % 5 == 0) continue; // continue checks the condition then ignores it and carries on
+            IO.println("Found 5 at index " + i);
+
+    }
+
+    // infinite loop
+    while (true) {
+        IO.println("Hello World");
+    }
+    // break out using the run stop option in your ide
+    // in a shell use ctrl + c
+
+    // Infinite loop inside a for loop
+    for (byte i = 0; i >= 0; i++) {
+        IO.println(i);
+    }
+     */
+
+    //Arrays
+//    int[] numbers = new int[10];
+    int[] numbers = {1,2,3,4,5,6,7,8,9,10};
+//    int[] numbers = new int[] {1,2,3,4,5,6,7,8,9,10};
+
+//    int[] numbers;
+//    numbers = new int[1_000_000];
+//    IO.println(numbers[100_456]);
+
+//    for (int i = 0; i < numbers.length; i++) {
+//        IO.println(i + " ");
+//    }
+
+    // Using copy creates a new instance of the array
+    int[] copy = Arrays.copyOf(numbers, 10);
+    for (int i = 0; i < copy.length; i++) {
+        IO.print(copy[i] + " ");
+    }
+    IO.println();
+    IO.print(copy.length);
+
+    int[] copyRange = Arrays.copyOfRange(numbers, 1, 4);
+    for (int i = 0; i < copyRange.length; i++) {
+        IO.print(copyRange[i] + " ");
+    }
+
+    IO.println();
+
+    int[] copyOfNumbers = numbers;
+    for (int i = 0; i < copyOfNumbers.length; i++) {
+        IO.print(copyOfNumbers[i] + " ");
+    }
+
+    // They use the same reference point thus numbers will have the same value at position 9
+    copyOfNumbers[9] = 1000;
+    IO.println(numbers[9] + " " + copyOfNumbers[9] + " " + copy[9]);
+
+    int[] clonedArray = numbers.clone();
+    clonedArray[9] = 1000;
+    IO.println(numbers[9] + " " + clonedArray[9]);
 
 //    ExtractSubstrings();
 //    ValidateUserCommands();
