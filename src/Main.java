@@ -408,7 +408,7 @@ void main() {
     for (byte i = 0; i >= 0; i++) {
         IO.println(i);
     }
-     */
+
 
     //Arrays
 //    int[] numbers = new int[10];
@@ -451,10 +451,104 @@ void main() {
     clonedArray[9] = 1000;
     IO.println(numbers[9] + " " + clonedArray[9]);
 
+
+
+    int[] numbers = {1,2,3,4,5,6,7,8,9,10};
+    for(int numb : numbers) {
+        IO.println(numb);
+    }
+
+
+    int[] numbers = new int[1_000_000];
+    for (int i = 0; i < numbers.length; i++) {
+        numbers[i] = i + 1;
+    }
+
+    binarySearch(numbers, 499_999);
+
+
+
+    // Parallel Arrays
+    String[] names = {"Max", "Bella", "Rocky"};
+    int[] ages = {5,3,7};
+    String[] types = {"Dog","Cat","Dog"};
+
+    for (int i = 0; i < names.length; i++) {
+        System.out.printf("The %s is called %s and is %d years old.\n", types[i], names[i], ages[i]);
+    }
+
+    int[][] grid = new int[3][10];
+    grid[0][1] = 5;
+
+    // Changes the format of the array (Jagged Array)
+    grid[1] = new int[]{6, 7, 8};
+    grid[2] = new int[]{1,2,3,4,5,6,7,8,9,10,11};
+    IO.println(grid[0][1]);
+
+    // Traditional for loop
+    for (int i = 0; i < grid.length; i++) {
+        for (int j = 0; j < grid[i].length; j++) {
+            IO.print(grid[i][j] + " ");
+        }
+        IO.println();
+    }
+
+    IO.println();
+
+    // Enhanced for loop
+    for (int[] row : grid) {
+        for (int cell : row) {
+            IO.print(cell + " ");
+        }
+        IO.println();
+    }
+
+    int[][] jaggedArray = new int[3][];
+    jaggedArray[0] = new int[5];
+    jaggedArray[1] = new int[]{1,2,3,4};
+    jaggedArray[2] = new int[1];
+
+    for (int[] row : jaggedArray) {
+        for (int cell : row) {
+            IO.print(cell + " ");
+        }
+        IO.println();
+    }
+     */
+
+    ArrayList<Integer> list = new ArrayList<>();
+    list.add(45);
+    list.add(56);
+    list.add(3);
+//    IO.println(list.get(0));
+
+    for (int i = 0; i < list.size(); i++) {
+        IO.println(list.get(i));
+    }
+
 //    ExtractSubstrings();
 //    ValidateUserCommands();
 //    ConvertNamesToUpperCase();
 //    CheckContentEquality();
+}
+
+public static int binarySearch(int[] arr, int target){
+
+    int left = 0;
+    int right = arr.length - 1;
+    int count = 0;
+
+    while (left <= right) {
+        count++;
+        IO.print(" " + count);
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == target) return mid;
+        if (arr[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+
+    return -1;
 }
 
 private void ExtractSubstrings() {
