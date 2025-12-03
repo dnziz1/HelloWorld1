@@ -514,7 +514,6 @@ void main() {
         }
         IO.println();
     }
-     */
 
     ArrayList<Integer> list = new ArrayList<>();
     list.add(45);
@@ -525,6 +524,10 @@ void main() {
     for (int i = 0; i < list.size(); i++) {
         IO.println(list.get(i));
     }
+     */
+    double price = 12.5;
+    System.out.printf("Price = £%.2f%n", price); // %n is adding a new line in the format
+    System.out.printf("%-10s %10.2f%n", "Total: ", 34.99);
 
 //    ExtractSubstrings();
 //    ValidateUserCommands();
